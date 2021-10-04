@@ -9,6 +9,6 @@ class DisplayActivity : AppCompatActivity() {
         setContentView(R.layout.activity_display)
 
         // Set title of activity.
-        title = R.string.title_display_er.toString()
+        title = getString(R.string.title_display_er)
     }
 }

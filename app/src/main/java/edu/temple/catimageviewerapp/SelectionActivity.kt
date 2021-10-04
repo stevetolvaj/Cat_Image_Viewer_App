@@ -2,8 +2,12 @@ package edu.temple.catimageviewerapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class SelectionActivity : AppCompatActivity() {
 
@@ -12,6 +16,29 @@ class SelectionActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         
         // Set title of activity.
-        title = R.string.title_selector.toString()
+        title = getString(R.string.title_selector)
+
+        // Assign RecyclerView and set to grid layout.
+        val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
+        recyclerView.layoutManager = GridLayoutManager(this, 3)
+
+        // Set adapter and click listener.
+        val adapter = ImageAdapter(imageList()) {
+            position -> myOnClick(position)
+        }
+
+        recyclerView.adapter = adapter
+
+
+
+    }
+
+    /**
+     * myOnClick is used as a click listener and to start new activity when click occurs.
+     * @param position The position of child view when click occured.
+     */
+    private fun myOnClick(position: Int) {
+        Toast.makeText(this, "Clicked Position $position", Toast.LENGTH_LONG).show()
     }
 }
+
