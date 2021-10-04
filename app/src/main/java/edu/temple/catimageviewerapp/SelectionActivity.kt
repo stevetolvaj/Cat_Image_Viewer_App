@@ -1,20 +1,19 @@
 package edu.temple.catimageviewerapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+
+const val EXTRA_POSITION = "edu.temple.catimageviewerapp.POSITION"
 
 class SelectionActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        
+
         // Set title of activity.
         title = getString(R.string.title_selector)
 
@@ -38,7 +37,14 @@ class SelectionActivity : AppCompatActivity() {
      * @param position The position of child view when click occured.
      */
     private fun myOnClick(position: Int) {
-        Toast.makeText(this, "Clicked Position $position", Toast.LENGTH_LONG).show()
+        startDisplayActivity(position)
+    }
+
+    private fun startDisplayActivity(position: Int) {
+        val intent = Intent(this, DisplayActivity::class.java).apply {
+            putExtra(EXTRA_POSITION, position)
+        }
+        startActivity(intent)
     }
 }
 

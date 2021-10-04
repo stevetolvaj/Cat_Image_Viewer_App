@@ -6,4 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".DisplayActivity">
 
+    <TextView
+        android:id="@+id/displayerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:text="@string/textview"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/displayerImageView"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/displayerTextView"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/green_eyed_cat"
+        android:contentDescription="@string/image_chosen_from_previous_activity" />
 </androidx.constraintlayout.widget.ConstraintLayout>
