@@ -15,7 +15,7 @@ class ImageAdapter(private val _dataSet: List<ImageObject>, private val myOnClic
         init {
             imageView.setOnClickListener(this)
         }
-
+        // Send position of click back to myOnClick.
         override fun onClick(v: View?) {
             val position = adapterPosition
             myOnClick(position)

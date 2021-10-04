@@ -16,6 +16,7 @@ class DisplayActivity : AppCompatActivity() {
         val imageView = findViewById<ImageView>(R.id.displayerImageView)
         val position = intent.getIntExtra(EXTRA_POSITION, 0)
 
+        // Set both views to the corresponding clicked item from image list.
         textView.text = imageList()[position].title
         imageView.setImageResource(imageList()[position].resourceId)
     }
