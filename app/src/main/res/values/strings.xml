@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Cat Image Viewer App</string>
+    <string name="title_selector">Selector</string>
+    <string name="title_display_er">Display-er</string>
+    <string name="selection_of_different_cats">Selection of different cats.</string>
+
 </resources>

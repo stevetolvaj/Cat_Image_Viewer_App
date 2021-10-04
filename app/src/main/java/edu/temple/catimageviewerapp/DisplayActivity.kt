@@ -7,5 +7,8 @@ class DisplayActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display)
+
+        // Set title of activity.
+        title = R.string.title_display_er.toString()
     }
 }
