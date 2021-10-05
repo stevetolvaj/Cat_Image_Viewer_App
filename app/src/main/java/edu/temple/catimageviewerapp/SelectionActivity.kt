@@ -37,19 +37,12 @@ class SelectionActivity : AppCompatActivity() {
      * @param position The position of child view when click occured.
      */
     private fun myOnClick(position: Int) {
-        startDisplayActivity(position)
-    }
-
-    /**
-     * The startDisplayActivity function will start the new activity after a click event is
-     * detected. It will pass the clicked position to the new activity.
-     * @param position The position of the image clicked.
-     */
-    private fun startDisplayActivity(position: Int) {
         val intent = Intent(this, DisplayActivity::class.java).apply {
             putExtra(EXTRA_POSITION, position)
         }
         startActivity(intent)
     }
+
+
 }
 
