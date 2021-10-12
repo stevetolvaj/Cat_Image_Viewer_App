@@ -1,9 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Cat Image Viewer App</string>
     <string name="title_selector">Selection</string>
     <string name="title_display_er">Display</string>
     <string name="selection_of_different_cats">Selection of different cats.</string>
-    <string name="textview">TextView</string>
     <string name="image_chosen_from_previous_activity">Image chosen from previous activity.</string>
+    <string name="click_an_image">Click an image below to view</string>
+    <string name="textview">Text</string>
 
+    <string-array name="cat_descriptions">
+        <item>Meowing Cat</item>
+        <item>Sleeping Cat</item>
+        <item>Playful Cat</item>
+        <item>Orange Cat on Sidewalk</item>
+        <item>Yawning Cat</item>
+        <item>Green Eyed Cat</item>
+        <item>White and Orange Cat</item>
+        <item>Two Kittens Sitting on Box</item>
+        <item>White Cat Laying on Bed</item>
+        <item>Kitten Scratching Post</item>
+        <item>Orange and White Cat Licking Lips</item>
+        <item>Tuxedo Cat with Crown on Head</item>
+    </string-array>
 </resources>
