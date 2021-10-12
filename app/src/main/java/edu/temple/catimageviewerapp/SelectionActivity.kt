@@ -14,8 +14,10 @@ class SelectionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // TODO use companion object instead of const val EXTRA_POSITION. Add parcelable to data ImageObject
+
         // Set title of activity.
-        title = getString(R.string.title_selector)
+        supportActionBar?.title = getString(R.string.title_selector)
 
         // Assign RecyclerView and set to grid layout.
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
@@ -34,7 +36,7 @@ class SelectionActivity : AppCompatActivity() {
 
     /**
      * The myOnClick function is used as a click listener and to start new activity when click occurs.
-     * @param position The position of child view when click occured.
+     * @param position The position of child view when click occurred.
      */
     private fun myOnClick(position: Int) {
         val intent = Intent(this, DisplayActivity::class.java).apply {

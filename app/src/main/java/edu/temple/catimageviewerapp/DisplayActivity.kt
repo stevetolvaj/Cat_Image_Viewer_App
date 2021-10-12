@@ -11,12 +11,11 @@ class DisplayActivity : AppCompatActivity() {
         setContentView(R.layout.activity_display)
 
         // Set title of activity.
-        title = getString(R.string.title_display_er)
+        supportActionBar?.title = getString(R.string.title_display_er)
         val textView = findViewById<TextView>(R.id.displayerTextView)
         val imageView = findViewById<ImageView>(R.id.displayerImageView)
         val position = intent.getIntExtra(EXTRA_POSITION, 0)
 
-        // Set both views to the corresponding clicked item from image list.
         textView.text = imageList()[position].title
         imageView.setImageResource(imageList()[position].resourceId)
     }
