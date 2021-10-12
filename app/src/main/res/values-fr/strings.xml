@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Application de visualisation d\'images de chat</string>
+    <string name="title_selector">Sélection</string>
+    <string name="title_display_er">Affichage</string>
+    <string name="selection_of_different_cats">Sélection de différents chats</string>
+    <string name="image_chosen_from_previous_activity">Image choisie parmi l\'activité précédente</string>
+    <string name="click_an_image">Cliquez sur une image ci-dessous pour voir</string>
+    <string name="textview">Texte</string>
+
+    <string-array name="cat_descriptions">
+        <item>Chat qui miaule</item>
+        <item>Chat endormi</item>
+        <item>Chat ludique</item>
+        <item>Chat orange sur le trottoir</item>
+        <item>Chat béant</item>
+        <item>Chat aux yeux verts</item>
+        <item>Chat blanc et orange</item>
+        <item>Deux chatons assis sur fort</item>
+        <item>Chat blanc allongé sur le lit</item>
+        <item>Poteau à chat chaton</item>
+        <item>Lèvres de léchage de chat orange et blanc</item>
+        <item>Chat smoking avec couronne sur la tête</item>
+    </string-array>
+</resources>
