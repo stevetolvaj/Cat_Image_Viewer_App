@@ -6,15 +6,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-const val EXTRA_POSITION = "edu.temple.catimageviewerapp.POSITION"
+
 
 class SelectionActivity : AppCompatActivity() {
+
+    // Save const string for put extra tag.
+    companion object {
+        const val EXTRA_IMAGE_OBJECT = "edu.temple.catimageviewerapp.IMAGE_OBJECT"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        // TODO use companion object instead of const val EXTRA_POSITION. Add parcelable to data ImageObject
 
         // Set title of activity.
         supportActionBar?.title = getString(R.string.title_selector)
@@ -29,18 +32,15 @@ class SelectionActivity : AppCompatActivity() {
         }
 
         recyclerView.adapter = adapter
-
-
-
     }
 
     /**
      * The myOnClick function is used as a click listener and to start new activity when click occurs.
-     * @param position The position of child view when click occurred.
+     * @param position The position of child view when click occured.
      */
     private fun myOnClick(position: Int) {
         val intent = Intent(this, DisplayActivity::class.java).apply {
-            putExtra(EXTRA_POSITION, position)
+            putExtra(EXTRA_IMAGE_OBJECT, imageList()[position])
         }
         startActivity(intent)
     }

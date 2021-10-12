@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import edu.temple.catimageviewerapp.SelectionActivity.Companion.EXTRA_IMAGE_OBJECT
 
 class DisplayActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,10 +15,13 @@ class DisplayActivity : AppCompatActivity() {
         supportActionBar?.title = getString(R.string.title_display_er)
         val textView = findViewById<TextView>(R.id.displayerTextView)
         val imageView = findViewById<ImageView>(R.id.displayerImageView)
-        val position = intent.getIntExtra(EXTRA_POSITION, 0)
+        val imageObject = intent.getParcelableExtra<ImageObject>(EXTRA_IMAGE_OBJECT)
 
-        textView.text = imageList()[position].title
-        imageView.setImageResource(imageList()[position].resourceId)
+        if (imageObject != null) {
+            textView.text = imageObject.title.toString()
+            imageView.setImageResource(imageObject.resourceId)
+        }
+
     }
 }
 
