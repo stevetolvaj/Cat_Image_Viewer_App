@@ -27,7 +27,7 @@ class SelectionActivity : AppCompatActivity() {
         recyclerView.layoutManager = GridLayoutManager(this, 3)
 
         // Set adapter and click listener.
-        val adapter = ImageAdapter(imageList()) {
+        val adapter = ImageAdapter(imageList(resources)) {
             position -> myOnClick(position)
         }
 
@@ -40,7 +40,7 @@ class SelectionActivity : AppCompatActivity() {
      */
     private fun myOnClick(position: Int) {
         val intent = Intent(this, DisplayActivity::class.java).apply {
-            putExtra(EXTRA_IMAGE_OBJECT, imageList()[position])
+            putExtra(EXTRA_IMAGE_OBJECT, imageList(resources)[position])
         }
         startActivity(intent)
     }
