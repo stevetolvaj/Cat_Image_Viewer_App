@@ -1,6 +1,5 @@
 package edu.temple.catimageviewerapp
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
@@ -39,10 +38,10 @@ class MainActivity : AppCompatActivity() {
      * @param position The position of child view when click occurred.
      */
     private fun myOnClick(position: Int) {
-        val intent = Intent(this, DisplayActivity::class.java).apply {
-            putExtra(EXTRA_IMAGE_OBJECT, imageList(resources)[position])
-        }
-        startActivity(intent)
+//        val intent = Intent(this, DisplayActivity::class.java).apply {
+//            putExtra(EXTRA_IMAGE_OBJECT, imageList(resources)[position])
+//        }
+        //startActivity(intent)
     }
 
 
