@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import edu.temple.catimageviewerapp.SelectionActivity.Companion.EXTRA_IMAGE_OBJECT
+import edu.temple.catimageviewerapp.MainActivity.Companion.EXTRA_IMAGE_OBJECT
 
 class DisplayActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
