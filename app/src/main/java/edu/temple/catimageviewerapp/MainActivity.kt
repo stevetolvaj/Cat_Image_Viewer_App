@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 
-class SelectionActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     // Save const string for put extra tag.
     companion object {
@@ -36,7 +36,7 @@ class SelectionActivity : AppCompatActivity() {
 
     /**
      * The myOnClick function is used as a click listener and to start new activity when click occurs.
-     * @param position The position of child view when click occured.
+     * @param position The position of child view when click occurred.
      */
     private fun myOnClick(position: Int) {
         val intent = Intent(this, DisplayActivity::class.java).apply {
