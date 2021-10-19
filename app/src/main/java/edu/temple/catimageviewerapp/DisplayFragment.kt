@@ -27,9 +27,16 @@ class DisplayFragment : Fragment() {
             .observe(requireActivity(), {updateImageDetails(it)})
     }
 
+    /**
+     * The updateImageDetails function will update the Display fragments the TextView and ImageView
+     * with the image object supplied as an argument.
+     *
+     * @param imageObject The ImageObject to supply the child views data.
+     */
     private fun updateImageDetails(imageObject: ImageObject) {
-
         view?.findViewById<TextView>(R.id.displayTextView)?.text = imageObject.title.toString()
         view?.findViewById<ImageView>(R.id.displayImageView)?.setImageResource(imageObject.resourceId)
     }
+
+
 }

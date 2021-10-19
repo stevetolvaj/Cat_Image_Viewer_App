@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         val displayFragment = DisplayFragment()
 
+        if (savedInstanceState == null)
         supportFragmentManager.beginTransaction()
             .add(R.id.fragmentDisplayContainerView, displayFragment)
             .commit()

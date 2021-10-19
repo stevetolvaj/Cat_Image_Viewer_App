@@ -47,6 +47,8 @@ class SelectionFragment : Fragment() {
         /**
          * The getInstance function Factory Function is used to generate a new instance. The
          * factory method should be provided with the collection of elements to display.
+         *
+         * @param imageList The list of images to display in the fragments recycler view.
          */
         fun getInstance (imageList: ArrayList<ImageObject>) : SelectionFragment {
             val fragment = SelectionFragment()
