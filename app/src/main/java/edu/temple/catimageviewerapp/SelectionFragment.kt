@@ -6,10 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import edu.temple.catimageviewerapp.MainActivity.Companion.EXTRA_IMAGE_LIST
 
+private const val ARG_PARAM1 = "param1"
 
 class SelectionFragment : Fragment() {
 
@@ -18,7 +19,7 @@ class SelectionFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        images = arguments?.getParcelableArrayList<ImageObject>(EXTRA_IMAGE_LIST) as ArrayList<ImageObject>
+        images = arguments?.getParcelableArrayList<ImageObject>(ARG_PARAM1) as ArrayList<ImageObject>
     }
 
     override fun onCreateView(
@@ -33,7 +34,7 @@ class SelectionFragment : Fragment() {
 
         // Set adapter and click listener.
         val adapter = ImageAdapter(imageList(resources)) {
-                position -> (activity as MainActivity).myOnClick(position)
+                position -> myOnClick(position)
         }
 
         recyclerView.adapter = adapter
@@ -51,12 +52,22 @@ class SelectionFragment : Fragment() {
             val fragment = SelectionFragment()
             val bundle = Bundle()
 
-            bundle.putParcelableArrayList(EXTRA_IMAGE_LIST, imageList)
+            bundle.putParcelableArrayList(ARG_PARAM1, imageList)
             fragment.arguments = bundle
             return fragment
         }
     }
 
+    /**
+     * The myOnClick function is used as a click listener and to start new activity when click occurs.
+     * @param position The position of child view when click occurred.
+     */
+    private fun myOnClick(position: Int) {
+        val imageObjectViewModel = ViewModelProvider(requireActivity())
+            .get(ImageObjectViewModel::class.java)
+
+        imageObjectViewModel.setImageObject(images[position])
+    }
 
 }
 
