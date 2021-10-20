@@ -16,6 +16,7 @@ class SelectionFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
     lateinit var images: ArrayList<ImageObject>
+    lateinit var viewModel: ImageObjectViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +32,8 @@ class SelectionFragment : Fragment() {
         layout.findViewById<TextView>(R.id.textView).text = getString(R.string.click_an_image)
         recyclerView = layout.findViewById(R.id.recyclerView)
         recyclerView.layoutManager = GridLayoutManager(layout.context, 3)
-
+        // Initialize viewModel.
+        viewModel = ViewModelProvider(requireActivity()).get(ImageObjectViewModel::class.java)
         // Set adapter and click listener.
         val adapter = ImageAdapter(imageList(resources)) {
                 position -> myOnClick(position)
@@ -65,10 +67,7 @@ class SelectionFragment : Fragment() {
      * @param position The position of child view when click occurred.
      */
     private fun myOnClick(position: Int) {
-        val imageObjectViewModel = ViewModelProvider(requireActivity())
-            .get(ImageObjectViewModel::class.java)
-
-        imageObjectViewModel.setImageObject(images[position])
+        viewModel.setImageObject(images[position])
     }
 
 }
